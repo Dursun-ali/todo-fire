@@ -5,6 +5,7 @@ var secStatus = document.getElementById(`status`);
 var typeInps = document.getElementById(`typeInp`);
 var deleteIcon = document.getElementsByClassName("delete-box");
 
+
 var arrayRender = [];
 async function addItem() {
   await db
@@ -96,7 +97,7 @@ function render(yapilacak, tarih, önem, durum, id, tip) {
         
         <div class="todo-box">
           <div onclick="iconWithDelete('${id}')" class="tick-icon mid">
-          <div onclick="deleteCounter('${id}')" class="checkIconBox">
+          <div class="checkIconBox">
           <i onclick="bcg('${id}')" id="checkk" style="font-size: 14px;"class="fa-sharp fa-solid fa-check"></i>
           </div>
           </div>
@@ -231,17 +232,32 @@ function searchFunc() {
   }
 }
 
-var arrDelete = [];
-function iconWithDelete(id) {
-  arrDelete.push(id);
+var arrDelete = []; 
+ async function iconWithDelete(id) {
 
-  document.getElementsByClassName("addTodo")[0].innerHTML = "DELETE";
-  document.getElementsByClassName("addTodo")[0].fontSize = "25px";
-  document.getElementsByClassName("addTodo")[0].style.backgroundColor = "red";
-  document.getElementsByClassName("addTodo")[0].id = "topDelete";
+  if (!arrDelete.includes(id)) {
+    arrDelete.push(id);
+  }else{
+    var indexNo=arrDelete.indexOf(id);
+    arrDelete.splice(indexNo,1)
+  }
+  if (arrDelete.length>0) {
+    document.getElementsByClassName("addTodo")[0].innerHTML = "DELETE";
+    document.getElementsByClassName("addTodo")[0].fontSize = "25px";
+    document.getElementsByClassName("addTodo")[0].style.backgroundColor = "red";
+    document.getElementsByClassName("addTodo")[0].id = "topDelete";
+  
+    // document.getElementById("topDelete").removeAttribute("onclick");
+    document.getElementById("topDelete").setAttribute("onclick", "topluSil()");
+  }else{
+    document.getElementsByClassName("addTodo")[0].innerHTML = "+ ADD";
+    document.getElementsByClassName("addTodo")[0].style.backgroundColor = "blue";
+    document.getElementById("topDelete").setAttribute("onclick", "openModal()");
+  }
 
-  // document.getElementById("topDelete").removeAttribute("onclick");
-  document.getElementById("topDelete").setAttribute("onclick", "topluSil()");
+
+
+
 }
 
 function topluSil() {
@@ -275,7 +291,8 @@ function editKey() {
   document
     .getElementsByClassName("editPiece")[0]
     .classList.toggle("opacityOne");
-  for (let i = 0; i < array.length; i++) {
+  
+    for (let i = 0; i < document.getElementsByClassName('editIconn').length; i++) {
     document
       .getElementsByClassName("editIconn")
       [i].classList.toggle("opacityOne");
