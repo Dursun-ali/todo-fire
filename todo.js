@@ -96,7 +96,7 @@ function render(yapilacak, tarih, önem, durum, id, tip) {
         
         <div class="todo-box">
           <div onclick="iconWithDelete('${id}')" class="tick-icon mid">
-          <div  class="checkIconBox">
+          <div onclick="deleteCounter('${id}')" class="checkIconBox">
           <i onclick="bcg('${id}')" id="checkk" style="font-size: 14px;"class="fa-sharp fa-solid fa-check"></i>
           </div>
           </div>
@@ -127,7 +127,6 @@ function formatDate(tarih) {
 
   let newDate = `${oldDate[8]}${oldDate[9]}/${oldDate[5]}${oldDate[6]}/${oldDate[0]}${oldDate[1]}${oldDate[2]}${oldDate[3]}`;
   return newDate;
-  
 }
 
 function deleteItem(id) {
@@ -144,7 +143,6 @@ function deleteItem(id) {
 }
 
 function editModal(id) {
-
   toDoInps.value = document
     .getElementById(id)
     .getElementsByClassName("articles")[0].innerHTML;
@@ -167,11 +165,14 @@ function editModal(id) {
     .getElementById("addBtn")
     .setAttribute("onclick", `editItem('${id}')`);
 
-
-    for (let i = 0; i < array.length; i++) {
-      document.getElementsByClassName('editIconn')[i].classList.toggle('opacityOne');
-    }
-    document.getElementsByClassName('editPiece')[0].classList.toggle('opacityOne');
+  for (let i = 0; i < array.length; i++) {
+    document
+      .getElementsByClassName("editIconn")
+      [i].classList.toggle("opacityOne");
+  }
+  document
+    .getElementsByClassName("editPiece")[0]
+    .classList.toggle("opacityOne");
 
   openModal();
 }
@@ -199,10 +200,9 @@ async function editItem(id) {
   document
     .getElementById(id)
     .getElementsByClassName("downStatus")[0].innerHTML = secStatus.value;
-    document
-    .getElementById(id)
-    .getElementsByClassName("types")[0].innerHTML=typeInps.value ;
-    
+  document.getElementById(id).getElementsByClassName("types")[0].innerHTML =
+    typeInps.value;
+
   closeModal();
 }
 
@@ -240,7 +240,7 @@ function iconWithDelete(id) {
   document.getElementsByClassName("addTodo")[0].style.backgroundColor = "red";
   document.getElementsByClassName("addTodo")[0].id = "topDelete";
 
-  document.getElementById("topDelete").removeAttribute("onclick");
+  // document.getElementById("topDelete").removeAttribute("onclick");
   document.getElementById("topDelete").setAttribute("onclick", "topluSil()");
 }
 
@@ -263,14 +263,21 @@ function topluSil() {
   document.getElementById("topDelete").setAttribute("onclick", "openModal()");
 }
 
-function bcg(id){
-  document.getElementById(`${id}`).getElementsByClassName('checkIconBox')[0].classList.toggle('background');
+function bcg(id) {
+  document
+    .getElementById(`${id}`)
+    .getElementsByClassName("checkIconBox")[0]
+    .classList.toggle("background");
 }
 
-function editKey(){
-  document.getElementsByClassName('editTodo')[0].classList.toggle('background');
-  document.getElementsByClassName('editPiece')[0].classList.toggle('opacityOne');
+function editKey() {
+  document.getElementsByClassName("editTodo")[0].classList.toggle("background");
+  document
+    .getElementsByClassName("editPiece")[0]
+    .classList.toggle("opacityOne");
   for (let i = 0; i < array.length; i++) {
-    document.getElementsByClassName('editIconn')[i].classList.toggle('opacityOne');
+    document
+      .getElementsByClassName("editIconn")
+      [i].classList.toggle("opacityOne");
   }
 }
