@@ -109,6 +109,16 @@ body {
   color: white;
   cursor: pointer;
 }
+.addTodo:hover {
+  position: absolute;
+  right: 2rem;
+  width: 8.5rem;
+  height: 2.8rem;
+  background-color: rgb(14, 90, 188);
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
 #checkBox {
   font-size: 4rem;
 }
@@ -576,4 +586,8 @@ body {
 }
 .opacityOne {
   opacity: 1;
+}
+
+.opacitZero{
+  opacity: 0;
 }

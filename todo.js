@@ -48,6 +48,17 @@ async function addItem() {
     .catch((error) => {
       console.error("Error adding document: ", error);
     });
+
+    document
+    .getElementsByClassName("editPiece")[0]
+    .classList.toggle("opacityOne");
+
+    for (let i = 0; i < document.getElementsByClassName('editIconn').length; i++) {
+      document
+        .getElementsByClassName("editIconn")
+        [i].classList.remove("opacityOne");
+    }
+    
   closeModal();
 }
 
@@ -113,7 +124,7 @@ function render(yapilacak, tarih, önem, durum, id, tip) {
           <div class="date-box mid">${newFormatDate}</div>
           
           <div class=" edit-box mid">
-        <div onclick="editModal('${id}')" class="editIconn">
+        <div onclick="editModal('${id}','${tarih}')" class="editIconn">
         <i class="fa-solid fa-user-pen"></i>
       </div>
           </div>
@@ -135,6 +146,8 @@ function formatDate(tarih) {
   return newDate;
 }
 
+
+
 function deleteItem(id) {
   db.collection("todo-items")
     .doc(`${id}`)
@@ -148,13 +161,14 @@ function deleteItem(id) {
   document.getElementById(`${id}`).style.display = "none";
 }
 
-function editModal(id) {
+function editModal(id, tarih) {
+
+  console.log(tarih)
+
   toDoInps.value = document
     .getElementById(id)
     .getElementsByClassName("articles")[0].innerHTML;
-  dateInps.value = document
-    .getElementById(id)
-    .getElementsByClassName("date-box")[0].innerHTML;
+  dateInps.value = tarih;
   secImp.value = document
     .getElementById(id)
     .getElementsByClassName("downImportance")[0].innerHTML;
@@ -269,14 +283,26 @@ var arrDelete = [];
     document.getElementsByClassName("addTodo")[0].fontSize = "25px";
     document.getElementsByClassName("addTodo")[0].style.backgroundColor = "red";
     document.getElementsByClassName("addTodo")[0].id = "topDelete";
-  
-    // document.getElementById("topDelete").removeAttribute("onclick");
     document.getElementById("topDelete").setAttribute("onclick", "topluSil()");
+    document.getElementsByClassName('editTodo')[0].removeAttribute("onclick");
   }else{
     document.getElementsByClassName("addTodo")[0].innerHTML = "+ ADD";
     document.getElementsByClassName("addTodo")[0].style.backgroundColor = "blue";
     document.getElementById("topDelete").setAttribute("onclick", "openModal()");
+    document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
   }
+
+
+  document
+  .getElementsByClassName("editPiece")[0]
+  .classList.remove("opacityOne");
+
+  for (let i = 0; i < document.getElementsByClassName('editIconn').length; i++) {
+    document
+      .getElementsByClassName("editIconn")
+      [i].classList.remove("opacityOne");
+  }
+  
 
 }
 
@@ -317,4 +343,12 @@ function editKey() {
       .getElementsByClassName("editIconn")
       [i].classList.toggle("opacityOne");
   }
+
+  if (arrDelete.length>0) {
+    document.getElementsByClassName('editTodo')[0].removeAttribute("onclick");
+  }else{
+    document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
+  }
+
+
 }
