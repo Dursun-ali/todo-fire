@@ -171,6 +171,7 @@ function editModal(id) {
     .getElementById("addBtn")
     .setAttribute("onclick", `editItem('${id}')`);
 
+
   for (let i = 0; i < array.length; i++) {
     document
       .getElementsByClassName("editIconn")
@@ -185,6 +186,15 @@ function editModal(id) {
 
 async function editItem(id) {
   console.log(`${id}`);
+
+  var oldImportance = document
+  .getElementById(id)
+  .getElementsByClassName("downImportance")[0].innerHTML;
+
+  var oldStatus=document
+  .getElementById(id)
+  .getElementsByClassName("downStatus")[0].innerHTML;
+
   await db.collection("todo-items").doc(id).update({
     toDo: toDoInps.value,
     Date: dateInps.value,
@@ -193,7 +203,6 @@ async function editItem(id) {
   });
 
   let newDate = formatDate(dateInps.value);
-
   document.getElementById("addBtn").innerHTML = "ADD";
 
   document.getElementById(id).getElementsByClassName("articles")[0].innerHTML =
@@ -208,6 +217,15 @@ async function editItem(id) {
     .getElementsByClassName("downStatus")[0].innerHTML = secStatus.value;
   document.getElementById(id).getElementsByClassName("types")[0].innerHTML =
     typeInps.value;
+
+
+    document.getElementById(`${id}`).getElementsByClassName('downStatus')[0].classList.remove(`${oldStatus}`);
+    document.getElementById(`${id}`).getElementsByClassName('downStatus')[0].classList.add(`${secStatus.value}`);
+
+    document.getElementById(`${id}`).getElementsByClassName('downImportance')[0].classList.remove(`${oldImportance}`);
+    document.getElementById(`${id}`).getElementsByClassName('downImportance')[0].classList.add(`${secImp.value}`);
+
+
 
   closeModal();
 }
