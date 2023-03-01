@@ -155,7 +155,7 @@ body {
   font-size: 1rem;
 }
 .articlesPiece {
-  width: 18rem;
+  width: 13rem;
   background-color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rgb(150, 150, 150);
@@ -167,7 +167,8 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rgb(150, 150, 150);
   font-size: 1rem;
-  margin-left: 0.5rem;
+  margin-right: 4.7rem;
+
 }
 .importancePiece {
   width: 11rem;
@@ -224,43 +225,41 @@ body {
   position: relative;
   left: 1.9rem;
   top: 1.75rem;
+  margin-right: 4rem;
+  
 }
 .types {
-  width: 11rem;
+  width: 10rem;
   height: 4.5rem;
   background-color: white;
   font-family: sans-serif;
   color: rgb(49, 49, 49);
-  position: relative;
-  right: -4rem;
+
 }
 .articles {
   display: flex;
   align-items: center;
-  width: 18rem;
+  width: 14rem;
   height: 4.5rem;
   background-color: white;
   font-family: sans-serif;
   color: rgb(46, 46, 46);
-  position: relative;
-  right: -4rem;
 }
 .date-box {
   width: 12.5rem;
   height: 4.5rem;
   margin-left: 0.5rem;
+  margin-right: 4.2rem;
   background-color: white;
   color: rgb(69, 69, 69);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  position: relative;
-  right: -4rem;
+
 }
 .importanceWrite {
   width: 11rem;
   height: 4.5rem;
   background-color: white;
-  position: relative;
-  right: -4rem;
+
 }
 .downImportance {
   width: 5rem;
@@ -277,8 +276,7 @@ body {
   width: 12rem;
   height: 4.5rem;
   background-color: white;
-  position: relative;
-  right: -4rem;
+
 }
 .downStatus {
   width: 5rem;
@@ -296,8 +294,6 @@ body {
   height: 4.5rem;
   background-color: white;
   font-size: 1.4rem;
-  position: relative;
-  right: -4rem;
   /* opacity: 0; */
 }
 /* .delete-box {
@@ -394,7 +390,7 @@ body {
   border-radius: 1rem;
 }
 .article{
-  width: 7rem;
+  width: 2rem;
   height: 3.5rem;
   background-color: #ffffff;
   font-size: 1.5rem;
