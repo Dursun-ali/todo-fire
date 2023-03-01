@@ -123,10 +123,15 @@ function render(yapilacak, tarih, önem, durum, id, tip) {
 }
 
 function formatDate(tarih) {
-  let oldDate = tarih.trim();
-  // 2023-12-02
 
-  let newDate = `${oldDate[8]}${oldDate[9]}/${oldDate[5]}${oldDate[6]}/${oldDate[0]}${oldDate[1]}${oldDate[2]}${oldDate[3]}`;
+  let oldDate = tarih.trim();
+  let newDate;
+  // 2023-12-02
+  if (oldDate=="") {
+    newDate=""
+  }else{
+    newDate = `${oldDate[8]}${oldDate[9]}/${oldDate[5]}${oldDate[6]}/${oldDate[0]}${oldDate[1]}${oldDate[2]}${oldDate[3]}`;
+  } 
   return newDate;
 }
 
@@ -254,9 +259,6 @@ var arrDelete = [];
     document.getElementsByClassName("addTodo")[0].style.backgroundColor = "blue";
     document.getElementById("topDelete").setAttribute("onclick", "openModal()");
   }
-
-
-
 
 }
 
