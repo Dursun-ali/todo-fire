@@ -20,11 +20,10 @@
   position: relative;
   bottom: 8.3rem;
 }
-body{
+body {
   background-color: rgb(248, 248, 248);
   width: 100%;
   min-height: 40%;
-
 }
 .searchAndAdd {
   position: relative;
@@ -44,7 +43,6 @@ body{
 #squareId {
   /* color: rgb(215, 215, 215); */
   font-size: 1.3rem;
-  
 }
 .search {
   position: absolute;
@@ -131,7 +129,8 @@ body{
   font-size: 0.9rem;
   border-bottom: 0.01rem solid rgb(237, 237, 237);
   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(220, 220, 220, 0.3) 0px 3px 1px -3px; */
-  box-shadow: rgba(174, 175, 178, 0.3) 0px 1px 2px 0px, rgba(201, 206, 209, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(174, 175, 178, 0.3) 0px 1px 2px 0px,
+    rgba(201, 206, 209, 0.15) 0px 2px 6px 2px;
 }
 
 .deleteSquare {
@@ -177,9 +176,9 @@ body{
 .editPiece {
   width: 4rem;
   background-color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1rem;
-  color:rgb(150, 150, 150);
+  color: rgb(150, 150, 150);
   opacity: 0;
 }
 /* .deletePiece {
@@ -204,14 +203,17 @@ body{
   background-color: white;
   z-index: 99;
   border-bottom: 0.01rem solid rgb(238, 238, 238);
-  box-shadow: rgba(174, 175, 178, 0.3) 0px 1px 2px 0px, rgba(181, 184, 186, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(174, 175, 178, 0.3) 0px 1px 2px 0px,
+    rgba(181, 184, 186, 0.15) 0px 2px 6px 2px;
 }
 .tick-icon {
-  width: 5rem;
-  height: 4.5rem;
+  width: 1.1rem;
+  height: 1.1rem;
   background-color: white;
   font-size: 1.3rem;
-
+  position: relative;
+  left: 1.9rem;
+  top: 1.75rem;
 }
 .types {
   width: 11rem;
@@ -219,6 +221,8 @@ body{
   background-color: white;
   font-family: sans-serif;
   color: rgb(49, 49, 49);
+  position: relative;
+  right: -4rem;
 }
 .articles {
   display: flex;
@@ -228,6 +232,8 @@ body{
   background-color: white;
   font-family: sans-serif;
   color: rgb(46, 46, 46);
+  position: relative;
+  right: -4rem;
 }
 .date-box {
   width: 12.5rem;
@@ -236,11 +242,15 @@ body{
   background-color: white;
   color: rgb(69, 69, 69);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  right: -4rem;
 }
 .importanceWrite {
   width: 11rem;
   height: 4.5rem;
   background-color: white;
+  position: relative;
+  right: -4rem;
 }
 .downImportance {
   width: 5rem;
@@ -257,6 +267,8 @@ body{
   width: 12rem;
   height: 4.5rem;
   background-color: white;
+  position: relative;
+  right: -4rem;
 }
 .downStatus {
   width: 5rem;
@@ -274,8 +286,10 @@ body{
   height: 4.5rem;
   background-color: white;
   font-size: 1.4rem;
+  position: relative;
+  right: -4rem;
   /* opacity: 0; */
-} 
+}
 /* .delete-box {
   width: 3rem;
   height: 2.8rem;
@@ -369,7 +383,7 @@ body{
   background-color: #ffffff;
   border-radius: 1rem;
 }
-.article {
+.article{
   width: 7rem;
   height: 3.5rem;
   background-color: #ffffff;
@@ -421,7 +435,7 @@ body{
   height: 4rem;
   /* background-color: var(--color1); */
   /* background: url(./assets/rave-cube-geometry-gradient-4k-hq.jpg); */
-background-color: #297fb9bf;
+  background-color: #297fb9bf;
   font-size: 1.5rem;
   border: 0.02rem solid var(--color4);
   color: white;
@@ -479,7 +493,6 @@ background-color: #297fb9bf;
 }
 
 .high {
-
   background-color: rgba(212, 16, 22, 0.263);
   color: rgb(162, 3, 3);
   width: 3.6rem;
@@ -530,7 +543,7 @@ background-color: #297fb9bf;
 #square {
   color: rgb(244, 244, 244);
 }
-.checkIconBox{
+.checkIconBox {
   width: 1.1rem;
   height: 1.1rem;
   background-color: rgb(244, 244, 244);
@@ -540,15 +553,15 @@ background-color: #297fb9bf;
   align-items: center;
   border-radius: 0.1rem;
 }
-#checkk{
+#checkk {
   color: rgb(244, 244, 244);
 }
 
-.background{
+.background {
   background-color: rgb(53, 114, 194);
   color: white;
 }
-.editIconn{
+.editIconn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -561,6 +574,6 @@ background-color: #297fb9bf;
   opacity: 0;
   cursor: pointer;
 }
-.opacityOne{
+.opacityOne {
   opacity: 1;
 }
