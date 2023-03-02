@@ -260,7 +260,7 @@ function searchFunc() {
   filter = input.value.toLowerCase();
   // card = document.getElementsByClassName("card-container");
   title = document.getElementsByClassName("articles");
-  for (i = 0; i < array.length; i++) {
+  for (i = 0; i < document.getElementsByClassName('editIconn').length; i++) {
     if (!title[i].innerHTML.toLowerCase().includes(filter)) {
       title[i].parentNode.parentNode.style.display = "none";
     } else {
@@ -287,6 +287,7 @@ arrDelete.push(id);
     document.getElementsByClassName("addTodo")[0].style.backgroundColor = "red";
     document.getElementsByClassName("addTodo")[0].id = "topDelete";
     document.getElementById("topDelete").setAttribute("onclick", "topluSil()");
+    document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
     // document.getElementsByClassName('editTodo')[0].removeAttribute("onclick");
   }else{
     document.getElementsByClassName("addTodo")[0].innerHTML = "+ ADD";
@@ -347,10 +348,10 @@ function editKey() {
   }
 
   if (arrIcon.length>0) {
-    document.getElementsByClassName('editTodo')[0].removeAttribute("onclick");
+    // document.getElementsByClassName('editTodo')[0].removeAttribute("onclick");
+    document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
+
   }else{
     document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
   }
-
-
 }
