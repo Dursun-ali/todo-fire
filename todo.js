@@ -287,12 +287,12 @@ arrDelete.push(id);
     document.getElementsByClassName("addTodo")[0].style.backgroundColor = "red";
     document.getElementsByClassName("addTodo")[0].id = "topDelete";
     document.getElementById("topDelete").setAttribute("onclick", "topluSil()");
-    document.getElementsByClassName('editTodo')[0].removeAttribute("onclick");
+    // document.getElementsByClassName('editTodo')[0].removeAttribute("onclick");
   }else{
     document.getElementsByClassName("addTodo")[0].innerHTML = "+ ADD";
     document.getElementsByClassName("addTodo")[0].style.backgroundColor = "blue";
     document.getElementById("topDelete").setAttribute("onclick", "openModal()");
-    document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
+    // document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
   }
 
   document
