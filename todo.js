@@ -314,7 +314,7 @@ arrDelete.push(id);
 }
 
 function topluSil() {
-  for (let i = 0; i < arrDelete.length; i++) {
+  for (let i = 0; i < arrIcon.length; i++) {
     // db.collection("todo-items")
     //   .doc(`${i}`)
     //   .delete()
@@ -325,7 +325,7 @@ function topluSil() {
     //     console.error("Error removing document: ", error);
     //   });
     // document.getElementById(`${i}`).style.display = "none";
-    deleteItem(arrDelete[i]);
+    deleteItem(arrIcon[i]);
   }
   document.getElementsByClassName("addTodo")[0].innerHTML = "+ ADD";
   document.getElementsByClassName("addTodo")[0].style.backgroundColor = "blue";
