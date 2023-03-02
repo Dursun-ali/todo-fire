@@ -51,7 +51,7 @@ async function addItem() {
 
     document
     .getElementsByClassName("editPiece")[0]
-    .classList.toggle("opacityOne");
+    .classList.remove("opacityOne");
 
     for (let i = 0; i < document.getElementsByClassName('editIconn').length; i++) {
       document
