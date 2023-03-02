@@ -186,7 +186,7 @@ function editModal(id, tarih) {
     .setAttribute("onclick", `editItem('${id}')`);
 
 
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < document.getElementsByClassName('editIconn').length; i++) {
     document
       .getElementsByClassName("editIconn")
       [i].classList.toggle("opacityOne");
@@ -270,15 +270,18 @@ function searchFunc() {
 }
 
 var arrDelete = []; 
+var arrIcon=[];
  async function iconWithDelete(id) {
 
-  if (!arrDelete.includes(id)) {
-    arrDelete.push(id);
+arrDelete.push(id);
+
+  if (!arrIcon.includes(id)) {
+    arrIcon.push(id);
   }else{
-    var indexNo=arrDelete.indexOf(id);
-    arrDelete.splice(indexNo,1)
+    var indexNo=arrIcon.indexOf(id);
+    arrIcon.splice(indexNo,1)
   }
-  if (arrDelete.length>0) {
+  if (arrIcon.length>0) {
     document.getElementsByClassName("addTodo")[0].innerHTML = "DELETE";
     document.getElementsByClassName("addTodo")[0].fontSize = "25px";
     document.getElementsByClassName("addTodo")[0].style.backgroundColor = "red";
@@ -292,7 +295,6 @@ var arrDelete = [];
     document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
   }
 
-
   document
   .getElementsByClassName("editPiece")[0]
   .classList.remove("opacityOne");
@@ -302,8 +304,6 @@ var arrDelete = [];
       .getElementsByClassName("editIconn")
       [i].classList.remove("opacityOne");
   }
-  
-
 }
 
 function topluSil() {
@@ -323,6 +323,8 @@ function topluSil() {
   document.getElementsByClassName("addTodo")[0].innerHTML = "+ ADD";
   document.getElementsByClassName("addTodo")[0].style.backgroundColor = "blue";
   document.getElementById("topDelete").setAttribute("onclick", "openModal()");
+  document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
+  arrIcon=[];
 }
 
 function bcg(id) {
@@ -344,7 +346,7 @@ function editKey() {
       [i].classList.toggle("opacityOne");
   }
 
-  if (arrDelete.length>0) {
+  if (arrIcon.length>0) {
     document.getElementsByClassName('editTodo')[0].removeAttribute("onclick");
   }else{
     document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
