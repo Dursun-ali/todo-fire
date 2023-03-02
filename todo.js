@@ -43,6 +43,10 @@ async function addItem() {
         document.getElementsByClassName("todoUl")[0].appendChild(newLi);
 
         arrayRender = [];
+        typeInps.value="";
+        toDoInps.value="";
+        dateInps.value="";
+
       }
     })
     .catch((error) => {
@@ -109,7 +113,7 @@ function render(yapilacak, tarih, önem, durum, id, tip) {
         <div class="todo-box">
           <div onclick="iconWithDelete('${id}')" class="tick-icon mid">
           <div class="checkIconBox">
-          <i onclick="bcg('${id}')" id="checkk" style="font-size: 14px;"class="fa-sharp fa-solid fa-check"></i>
+          <i onclick="bcg('${id}')" id="checkk"class="fa-sharp fa-solid fa-check"></i>
           </div>
           </div>
           <div class="types mid">${tip}</div>
@@ -162,9 +166,6 @@ function deleteItem(id) {
 }
 
 function editModal(id, tarih) {
-
-  console.log(tarih)
-
   toDoInps.value = document
     .getElementById(id)
     .getElementsByClassName("articles")[0].innerHTML;
@@ -184,7 +185,6 @@ function editModal(id, tarih) {
   document
     .getElementById("addBtn")
     .setAttribute("onclick", `editItem('${id}')`);
-
 
   for (let i = 0; i < document.getElementsByClassName('editIconn').length; i++) {
     document
@@ -289,11 +289,17 @@ arrDelete.push(id);
     document.getElementById("topDelete").setAttribute("onclick", "topluSil()");
     document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
     // document.getElementsByClassName('editTodo')[0].removeAttribute("onclick");
+    typeInps.value="";
+    toDoInps.value="";
+    dateInps.value="";
   }else{
     document.getElementsByClassName("addTodo")[0].innerHTML = "+ ADD";
     document.getElementsByClassName("addTodo")[0].style.backgroundColor = "blue";
     document.getElementById("topDelete").setAttribute("onclick", "openModal()");
     // document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
+    typeInps.value="";
+    toDoInps.value="";
+    dateInps.value="";
   }
 
   document
@@ -326,6 +332,9 @@ function topluSil() {
   document.getElementById("topDelete").setAttribute("onclick", "openModal()");
   document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
   arrIcon=[];
+  typeInps.value="";
+  toDoInps.value="";
+  dateInps.value="";
 }
 
 function bcg(id) {
@@ -354,4 +363,13 @@ function editKey() {
   }else{
     document.getElementsByClassName('editTodo')[0].setAttribute("onclick","editKey()");
   }
+}
+
+
+
+function addNew(){
+  typeInps.value="";
+  toDoInps.value="";
+  dateInps.value="";
+  openModal();
 }
