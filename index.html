@@ -129,26 +129,27 @@ return oList; -->
       </div> -->
       <div class="modal" style="display: none;">
         <div class="modal__inner">
-          <!-- <button class="modal__close" style="  transition: opacity 0.25s ease;
-          font-family: sans-serif; border:none;outline:none;" onclick="closeModal()" type="button">EXIT</button> -->
-          <div onclick="closeModal()" class="modal__close"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
-          <div style="margin-top: 50px;" class="modalbox">
-            <div class="article">Type : </div>
-            <div class="inpBox"><input id="typeInp" type="text" /></div>
+
+          <div class="upNavbar"></div>
+
+          <div onclick="closeModal()" class="modal__close"><i style="color: rgb(238, 238, 238);" class="fa-sharp fa-solid fa-xmark"></i></div>
+          <div class="modalbox">
+            <div style="margin-top: 60px;" class="article">Type <span style="color: rgba(225, 13, 13, 0.854);margin: 0 5px 0 11px;">*</span> <span style="font-size: 14px;"><i style="color: rgb(111, 111, 111)" class="fa-sharp fa-solid fa-circle-exclamation"></i></span> </div>
+            <div class="inpBox"><input style="background-color: rgb(250, 250, 250);" id="typeInp" type="text" /></div>
           </div>
-          <div style="margin-top: 50px;" class="modalbox">
-            <div class="article">To Do :</div>
-            <div class="inpBox"><input id="todoInp" type="text" /></div>
+          <div  class="modalbox">
+            <div class="article">To Do <span style="color: rgba(225, 13, 13, 0.854);margin: 0 1px 0 7px;">*</span> <span style="font-size: 14px;"><i style="color: rgb(111, 111, 111)" class="fa-sharp fa-solid fa-circle-exclamation"></i></span></div>
+            <div class="inpBox"><input style="background-color:rgb(250, 250, 250) ;" id="todoInp"  type="text" /></div>
           </div>
           <div class="modalbox">
-            <div class="article">Date :</div>
-            <div class="inpBox"><input id="dateInp" type="date" /></div>
+            <div class="article">Date <span style="color: rgba(225, 13, 13, 0.854);margin: 0 6px 0 11px;">*</span> <span style="font-size: 14px;"><i style="color: rgb(111, 111, 111)" class="fa-sharp fa-solid fa-circle-exclamation"></i></span></div>
+            <div class="inpBox"><input style="position: relative;right: -65px;background-color:rgb(250, 250, 250) ;" id="dateInp" type="date" /></div>
           </div>
 
           <div class="sectionBox">
             <div class="sectionImportance">
-              <div class="titleImportance" >Importance </div>
-              <select  style="width: 180px;height: 40px;font-size: 20px;" id="importance">
+              <div class="titleImportance" >Importance <span style="color: rgba(225, 13, 13, 0.854);margin: 0 5px 0 11px;">*</span> <span style="font-size: 14px;"><i style="color: rgb(111, 111, 111)" class="fa-sharp fa-solid fa-circle-exclamation"></i></span> </div>
+              <select  style="width: 220px;height: 30px;font-size: 20px;background-color: rgb(250, 250, 250);" id="importance">
                 <option value="high">high</option>
                 <option value="low">low</option>
                 <option value="middle">middle</option>
@@ -156,8 +157,8 @@ return oList; -->
             </div>
             <div class="sectionStatus">
 
-              <div class="StatusImportance" >Status </div>
-              <select style="width: 180px;height: 40px;font-size: 20px;" id="status">
+              <div class="StatusImportance" >Status <span style="color: rgba(225, 13, 13, 0.854);margin: 0 5px 0 11px;">*</span> <span style="font-size: 14px;"><i style="color: rgb(111, 111, 111)" class="fa-sharp fa-solid fa-circle-exclamation"></i></span></div>
+              <select style="width: 220px;height: 30px;font-size: 20px;background-color: rgb(250, 250, 250);" id="status">
                 <option value="Completed">Completed</option>
                 <option value="cancel">cancel</option>
                 <option value="wait">wait</option>
