@@ -397,8 +397,8 @@ body {
   align-items: center;
   width: 30rem;
   height: 2.5rem;
-  background-color: rgb(250, 250, 250);
-  border-radius: 1px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 0.8rem;
   margin-left: 2rem;
 }
 .inpBox input {
