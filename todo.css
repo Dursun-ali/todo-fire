@@ -310,15 +310,16 @@ body {
   bottom: 0;
   left: 0;
   text-align: left;
-  /* background: rgba(0, 0, 0, 0.9); */
-  background-color: rgb(237, 237, 237);
+  background: rgba(24, 24, 25, 0.557);
+  /* background-color: rgb(240, 240, 240); */
   z-index: 99999;
+
 }
 
 /* modal yapımın konumu ile o beyaz kısmımızın ayarlanması */
 .modal__inner {
-  height: 40rem;
-  width: 55rem;
+  height: 35rem;
+  width: 34rem;
   transition: top 0.25s ease;
   position: absolute;
   top: 0;
@@ -329,24 +330,29 @@ body {
   overflow: auto;
   background: white;
   border-radius: 5px;
-  border-radius: 0.5rem;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 6px;
+  border: 1px solid #dedede;
+  /* filter: blur(1px); */
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
 }
 
 /* kapama tusumuzun konumunun belirlenmesi */
 .modal__close {
   position: absolute;
-  right: 2rem;
-  top: 2rem;
-  width: 1.6rem;
-  height: 1.6rem;
+  right: 1.1rem;
+  top: 1.2rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   color: rgb(27, 22, 48);
-  font-size: 2rem;
+  font-size: 1.2rem;
+  color: rgb(199, 199, 199);
+}
+.modal__close:hover {
+  color: rgba(31, 55, 65, 0.559);
+  box-shadow: inset;
 }
 
 .btn {
@@ -376,110 +382,124 @@ body {
 }
 
 .modalbox {
-  margin: 1.5rem 20%;
-  width: 100%rem;
+  width: 70%;
+  margin: 0.4rem auto;
   height: 4.6rem;
   background-color: white;
+  margin-bottom: 1.5rem;
 }
 .article {
-  margin-left: 2rem;
+  
+
   width: 12rem;
-  height: 1.6rem;
+  height: 1.3rem;
   background-color: #ffffff;
   font-size: 1.5rem;
   margin-bottom: 0.1rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: rgb(150, 150, 150);
 }
 .inpBox {
   display: flex;
   align-items: center;
-  width: 30rem;
-  height: 2.5rem;
+  width: 100%;
+  height: 2.4rem;
   background-color: rgb(245, 245, 245);
-  border-radius: 0.8rem;
-  margin-left: 2rem;
+  border: 1px solid #dedede;
+  border-radius: 3px;
 }
+
 .inpBox input {
   width: 25rem;
   height: 2.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   outline: none;
   border: none;
+  margin-left: 1rem;
 }
 .sectionBox {
   display: flex;
   justify-content: center;
-  width: 60%;
-  margin: 1.2rem 20%;
-  height: 5rem;
+  width: 70%;
+  margin: 0 auto;
+  height: 4rem;
 }
 .sectionImportance {
   position: relative;
   /* width: 50%; */
   width: 15rem;
-  height: 5rem;
+  height: 4rem;
 }
 .sectionStatus {
   /* width: 50%; */
   width: 15rem;
-  height: 5rem;
+  height: 4rem;
 }
 .titleImportance {
-  margin-bottom: 0.8rem;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   width: 100%;
   height: 2rem;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   border: 0.02rem solid var(--color4);
   color: rgb(150, 150, 150);
 }
 .StatusImportance {
-  margin-bottom: 0.8rem;
+  position: relative;
+  left: 1.1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   align-items: center;
   width: 100%;
   height: 2rem;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   border: 0.02rem solid var(--color4);
   color: rgb(150, 150, 150);
 }
 #importance {
-  border: none;
   outline: none;
   position: relative;
-  right: -0.5rem;
+  right: 0rem;
+  width: 180px;
+  height: 2.2rem;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid #dedede;
+  border-radius: 3px;
 }
 #status {
-  border: none;
   outline: none;
   position: relative;
-  right: -2rem;
+  right: -1.1rem;
+  width: 180px;
+  height: 2.2rem;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid #dedede;
+  border-radius: 3px;
+
 }
 .save-container {
-  position: absolute;
-  bottom: 2.2rem;
-  left: 22rem;
-  width: 7.5rem;
-  height: 3rem;
+  
+  right: 18rem;
+  width: 40%;
+  margin: 2.5rem auto;
+  height: 2.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  /* background-color: rgb(10, 102, 222); */
-  background: url(./assets/rave-cube-geometry-gradient-4k-hq.jpg);
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  border-radius: 1rem;
-  font-size: 1.5rem;
+  background-color: #0a66d0;
+  /* background: url(./assets/rave-cube-geometry-gradient-4k-hq.jpg); */
+  /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
+  border-radius: 0.3rem;
+  font-size: 1rem;
   cursor: pointer;
   font-family: sans-serif;
+}
+.save-container:hover {
+  background-color: #004390;
 }
 /* modal end */
 .todoUl {
@@ -587,8 +607,10 @@ body {
 }
 .upNavbar {
   width: 100%;
-  height: 6rem;
-  background: url(./assets/rave-cube-geometry-gradient-4k-hq.jpg);
+  height: 3.5rem;
+  /* background: url(./assets/rave-cube-geometry-gradient-4k-hq.jpg); */
+  border-bottom: 1px solid #dedede;
   background-size:  100%;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: #f5f5f5;
 }
+

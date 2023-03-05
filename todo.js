@@ -373,3 +373,4 @@ function addNew(){
   dateInps.value="";
   openModal();
 }
+
