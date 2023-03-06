@@ -195,6 +195,7 @@ function editModal(id, tarih) {
     .getElementsByClassName("editPiece")[0]
     .classList.toggle("opacityOne");
 
+    document.getElementsByClassName("editTodo")[0].classList.toggle("background");
   openModal();
 }
 
